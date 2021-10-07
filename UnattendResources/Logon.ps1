@@ -53,9 +53,14 @@ function Set-UnattendEnableSwap {
     foreach ($i in $xml.unattend.settings) {
         if ($i.pass -eq "specialize") {
             $index = [array]::IndexOf($xml.unattend.settings, $i)
-            if ($xml.unattend.settings[$index].component.RunSynchronous.RunSynchronousCommand.Order) {
-                $xml.unattend.settings[$index].component.RunSynchronous.RunSynchronousCommand.Order = "2"
+            try {
+                if ($xml.unattend.settings[$index].component.RunSynchronous.RunSynchronousCommand.Order) {
+                    $xml.unattend.settings[$index].component.RunSynchronous.RunSynchronousCommand.Order = "2"
+                }
             }
+            catch {
+            }
+            
             [xml]$RunSynchronousCommandXml = @"
         <RunSynchronousCommand xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
           <Order>1</Order>
