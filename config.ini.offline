@@ -1,12 +1,12 @@
 [DEFAULT]
 # The location of the WIM file from the mounted Windows ISO.
-wim_file_path=.\install.wim
+wim_file_path=C:\git\windows-openstack-imaging-tools\install.wim
 # This is the complete name of the Windows version that will be generated.
 # In order to find the possible options, use the Get-WimFileImagesInfo command
 # and look for the Name property.
 image_name=Windows 10 Pro
 # The destination of the generated image.
-image_path=D:\GitHub\windows-openstack-imaging-tools\win-image.vhdx
+image_path=C:\images\tdc-windows-11-pro-image.vhdx
 # Select between VHD, VHDX, QCOW2, VMDK or RAW formats.
 virtual_disk_format=VHDX
 # This parameter allows to choose between MAAS, KVM, VMware and Hyper-V specific images.
