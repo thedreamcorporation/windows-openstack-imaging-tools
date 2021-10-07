@@ -1,0 +1,12 @@
+#ps1
+
+# Set Admin password
+Set-LocalUser -Name Admin -Password (ConvertTo-SecureString -String "DrHoratioSands!135" -AsPlainText -Force)
+Set-LocalUser -Name Administrator -Password (ConvertTo-SecureString -String "DrHoratioSands!135" -AsPlainText -Force)
+
+# Rename host
+(Get-WmiObject Win32_ComputerSystem).Rename((Select-String -Path "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloudbase-init-unattend.log" -Pattern 'Setting hostname' | Select-Object * -First 1).Line.Split(" ")[-1])
+
+# Install Salt Minion
+# WARNING - minion name here needs to be set manually!
+choco install -y saltminion --params="'/Master:salt.other.world /MinionName:elpenor.hq.thedreamcorporation.com'"
