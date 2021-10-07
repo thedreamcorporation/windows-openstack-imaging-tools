@@ -26,9 +26,25 @@ https://github.com/cloudbase/cloudbase-init-offline-install
 ## Workflow of Windows imaging tools
 <img src="https://user-images.githubusercontent.com/1412442/29972658-8fd4d36a-8f35-11e7-80bd-cea90e48e8ba.png" width="750">
 
+## How we probably got this working for OTHERWORLD immersion pod images
+```powershell
+Import-Module .\WinImageBuilder.psm1
+Import-Module .\Config.psm1
+Import-Module .\UnattendResources\ini.psm1
 
+$ConfigFilePath = ".\config.ini"
 
-## Fast path to create a Windows image
+# Set the path to the .wim file, which you might need to extract arduously from a higher level archive within the iso...:
+Set-IniFileValue -Path (Resolve-Path $ConfigFilePath) -Section "DEFAULT" `
+                                      -Key "wim_file_path" `
+                                      -Value "D:\Sources\install.wim"
+
+# Now create the image
+New-WindowsOnlineImage -ConfigFilePath $ConfigFilePath
+
+```
+
+## Upstream repo's suggestion of fast path to create a Windows image
 
 ### Requirements:
 
