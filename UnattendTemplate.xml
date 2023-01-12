@@ -64,12 +64,12 @@
         </component>
         <component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <SetupUILanguage>
-                <UILanguage>en-US</UILanguage>
+                <UILanguage>en-UK</UILanguage>
             </SetupUILanguage>
-            <InputLocale>en-US</InputLocale>
-            <UILanguage>en-US</UILanguage>
-            <SystemLocale>en-US</SystemLocale>
-            <UserLocale>en-US</UserLocale>
+            <InputLocale>en-UK</InputLocale>
+            <UILanguage>en-UK</UILanguage>
+            <SystemLocale>en-UK</SystemLocale>
+            <UserLocale>en-UK</UserLocale>
         </component>
     </settings>
     <settings pass="oobeSystem">
@@ -116,40 +116,40 @@
                     Must be reset with final Sysprep.
                 -->
                 <AdministratorPassword>
-                    <Value>Passw0rd</Value>
+                    <Value>DrHoratioSands</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
                 <!-- The following is needed on a client OS -->
                 <LocalAccounts>
                     <LocalAccount wcm:action="add">
                         <Password>
-                            <Value>DrHoratioSands!135</Value>
+                            <Value>DrHoratioSands</Value>
                             <PlainText>true</PlainText>
                         </Password>
                         <Description>Admin user</Description>
-                        <DisplayName>Admin</DisplayName>
+                        <DisplayName>VR</DisplayName>
                         <Group>Administrators</Group>
-                        <Name>Admin</Name>
+                        <Name>VR</Name>
                     </LocalAccount>
                 </LocalAccounts>              
             </UserAccounts>
             <AutoLogon>
                 <Password>
-                    <Value>Passw0rd</Value>
+                    <Value>DrHoratioSands</Value>
                     <PlainText>true</PlainText>
                 </Password>
                 <Enabled>true</Enabled>
                 <LogonCount>50</LogonCount>
-                <Username>Administrator</Username>
+                <Username>VR</Username>
             </AutoLogon>
             <ComputerName>*</ComputerName>
         </component>
         <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <InputLocale>en-US</InputLocale>
-            <UILanguage>en-US</UILanguage>
-            <UILanguageFallback>en-us</UILanguageFallback>
-            <SystemLocale>en-US</SystemLocale>
-            <UserLocale>en-US</UserLocale>
+            <InputLocale>en-UK</InputLocale>
+            <UILanguage>en-UK</UILanguage>
+            <UILanguageFallback>en-uk</UILanguageFallback>
+            <SystemLocale>en-UK</SystemLocale>
+            <UserLocale>en-UK</UserLocale>
         </component>
     </settings>
     <settings pass="specialize">
@@ -158,15 +158,6 @@
         </component>
         <component name="Microsoft-Windows-TerminalServices-RDP-WinStationExtensions" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <UserAuthentication>1</UserAuthentication>
-        </component>
-        <component name="Networking-MPSSVC-Svc" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <FirewallGroups>
-                <FirewallGroup wcm:action="add" wcm:keyValue="RemoteDesktop">
-                    <Active>true</Active>
-                    <Profile>all</Profile>
-                    <Group>@FirewallAPI.dll,-28752</Group>
-                </FirewallGroup>
-            </FirewallGroups>
         </component>
         <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="NonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <TimeZone>UTC</TimeZone>
